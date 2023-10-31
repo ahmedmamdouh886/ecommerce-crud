@@ -5,7 +5,7 @@ services:
   app:
     build:
       args:
-        user: ecommerce
+        user: thiqat
         uid: 1000
       context: ./
       dockerfile: Dockerfile
