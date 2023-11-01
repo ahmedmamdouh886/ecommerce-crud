@@ -90,15 +90,29 @@ docker-compose exec app php ./vendor/bin/phpmetrics --report-html=myreport <proj
 
 ## Files structure
 * app/Http/API/Controllers|Requests|Resources/*.php --> It contains the application layers such as controllers, HTTP request validation layer to validate the request payload, resources layer to format response.
+
 * app/services/*.php --> It's a layer for handling and isolating the business/application logic that could be resused often. It contains the Product price discount and user auth handlers.
+
 * app/Models/*.php --> It's an ORM layer to interact with database.
+
 * app/Repositories/*.php --> It's a layer for handling and isolating database queries. PLEASE note that it's Loosely Coupled, that's why I just return array from their methods (I could've used somthing like DTO layer but I haven't done that for the sake of time).
+
 * routes/api.php --> It contains the REST API endpoints.
-* ./docker-compose.yml --> the docker compose file.
-* ./dockerFile --> the docker file.
-* ./docker/* --> Contains the docker services configurations such as nginx and volumes.
-* ./database/migrations --> Contains DB schema.
-* ./database/factories --> Contains DB factories to help out loading up some data into DB.
-* ./database/seeders --> Contains Seeders files to seed some data into DB.
-* ./config/product-price-discount.php --> For facilitating implementing OOP in SOLID principles.
-* ./app/Exceptions/Handler.php --> For global API Handling exceptions.
+
+* docker-compose.yml --> the docker compose file.
+
+* dockerFile --> the docker file.
+
+* docker/* --> Contains the docker services configurations such as nginx and volumes.
+
+* database/migrations --> Contains DB schema.
+
+* database/factories --> Contains DB factories to help out loading up some data into DB.
+
+* database/seeders --> Contains Seeders files to seed some data into DB.
+
+* config/product-price-discount.php --> For facilitating implementing OOP in SOLID principles.
+
+* app/Exceptions/Handler.php --> For global API Handling exceptions.
+
+* app/Providers/AppServiceProvider.php --> For binding concrete class to its contract(interface).
