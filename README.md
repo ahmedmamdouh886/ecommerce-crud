@@ -75,6 +75,13 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 * Head first design patterns.
 * Clean Code: A Handbook of Agile Software Craftsmanship.
 
+## You can run the command below for software metrics
+
+#### This will give you some insights in software metrics such as LCOM, Cyclomatic Complexity and more.
+```bash
+docker-compose exec app php ./vendor/bin/phpmetrics --report-html=myreport <project-folder-to-analyze>
+```
+
 ## Files structure
 * app/Http/API/Controllers|Requests|Resources/*.php --> It contains the application layers such as controllers, HTTP request validation layer to validate the request payload, resources layer to format response.
 * app/services/*.php --> It's a layer for handling and isolating the business/application logic that could be resused often. It contains the Product price discount and user auth handlers.
