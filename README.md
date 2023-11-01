@@ -111,7 +111,7 @@ docker-compose exec app php ./vendor/bin/phpmetrics --report-html=myreport <proj
 
 * database/seeders --> Contains Seeders files to seed some data into DB.
 
-* config/product-price-discount.php --> For facilitating implementing OOP in SOLID principles.
+* config/product-price-discount.php --> Product price discount handler paths, for facilitating implementing OCP in SOLID principles.
 
 * app/Exceptions/Handler.php --> For global API Handling exceptions.
 
