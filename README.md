@@ -69,7 +69,7 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 * Law of Demeter principle.
 * Factory design pattern (To burry the if conditional in the low level abstraction.).
 
-### If you don't know any of the principles above you can look up fot it in one these books:
+### Don't know any of the principles above? you can look it up in one of these books
 * Head first object-oriented analysis and design.
 * Refactoring: Improving the Design of Existing Code.
 * Head first design patterns.
