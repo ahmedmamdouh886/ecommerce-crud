@@ -26,18 +26,17 @@ docker-compose exec app php artisan db:seed
 #### First:
 Call http://localhost:9050/api/v1/auth/login with the payload and headers below:
 
-Payload:
-Username: admin
+Payload: <br>
+Username: admin <br>
 Password: passwd
 
-Headers:
+Headers: <br>
 Accept: application/json
 
 #### Second:
-Hit any endpoint listed in the Endpoints sections with the headers below:
-Headers:
-Accept: application/json
-Authorization: Bearer <your-token> --> <your-token> you have got from the login process section.
+* Hit any endpoint listed in the Stateless API Endpoints sections with the headers below:
+Accept: application/json <br />
+Authorization: Bearer <b>your-token<b> --> Where your-token is the token you have got from the login process section.
 
 ## Stateless API Endpoints
 
@@ -52,16 +51,6 @@ Authorization: Bearer <your-token> --> <your-token> you have got from the login 
 * Visit: post http://localhost:9050/api/v1/products -> To create a new product.
 * Visit: patch http://localhost:9050/api/v1/products/{id} -> To update a product.
 * Visit: delete http://localhost:9050/api/v1/products/{id} -> To delete a product.
-
-## Software metrics
-### Maintability complexity metric
-![Alt text](maintainability-complexity.png?raw=true "Maintability complexity metric")
-### Maintability without comments complexity metric
-![Alt text](maintainability-without-comments-complexity.png?raw=true "Maintability without comments complexity metric")
-### Cyclomatic complexity metric (which is conditional statements legs count)
-![Alt text](cyclomatic-complexity.png?raw=true "Cyclomatic complexity metric which is conditional statements legs.")
-### Average bugs per class metrics
-![Alt text](average-bugs.png?raw=true "Average bugs per class metric.")
 
 ## Files structure
 * app/Http/API/Controllers|Requests|Resources/*.php --> It contains the application layers such as controllers, HTTP request validation layer to validate the request payload, resources layer to format response.
