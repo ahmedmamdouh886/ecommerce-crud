@@ -53,6 +53,28 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 * Visit: patch http://localhost:9050/api/v1/products/{id} -> To update a product.
 * Visit: delete http://localhost:9050/api/v1/products/{id} -> To delete a product.
 
+## Principles, architecture, patterns and common processes used in this task
+* MVC (Model View Controller) architecture pattern.
+* Dockerization for development environment setup.
+* RESTful API.
+* Loose coupling.
+* Abstraction.
+* Dependency injection.
+* Replace Type Code with Subclasses.
+* Replace Magic Number with Symbolic Constant.
+* SOLID principles.
+* Design by contract.
+* DRY (Don't Repeat Yourself)
+* YAGNI (You aren't gonna need it).
+* Law of Demeter principle.
+* Factory design pattern (To burry the if conditional in the low level abstraction.).
+
+### If you don't know any of the principles above you can look up fot it in one these books:
+* Head first object-oriented analysis and design.
+* Refactoring: Improving the Design of Existing Code.
+* Head first design patterns.
+* Clean Code: A Handbook of Agile Software Craftsmanship.
+
 ## Files structure
 * app/Http/API/Controllers|Requests|Resources/*.php --> It contains the application layers such as controllers, HTTP request validation layer to validate the request payload, resources layer to format response.
 * app/services/*.php --> It's a layer for handling and isolating the business/application logic that could be resused often. It contains the Product price discount and user auth handlers.
