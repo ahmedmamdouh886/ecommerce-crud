@@ -71,9 +71,9 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 * SOLID principles.
 * Design by contract.
 * DRY (Don't Repeat Yourself)
-* YAGNI (You aren't gonna need it).
+* YAGNI (You Aren't Gonna Need It).
 * Law of Demeter principle.
-* Factory design pattern (To burry the if conditional in the low level abstraction.).
+* Factory design pattern (To bury the Cyclomatic Complexity(linearly-independent paths/Conditional statements) in the low level abstraction).
 
 ### Don't know any of the principles above? you can look it up in one of these books
 * Head first object-oriented analysis and design.
