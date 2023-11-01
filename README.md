@@ -24,14 +24,20 @@ docker-compose exec app php artisan db:seed
 ### Login process
 
 #### First:
-Call http://localhost:9050/api/v1/auth/login with the payload and headers below:
+POST http://localhost:9050/api/v1/auth/login with the payload and headers below:
 
 Payload: <br>
-Username: admin <br>
-Password: passwd
+```bash
+{
+    "username": "admin",
+    "password": "passwd",
+}
+```
 
 Headers: <br>
+```bash
 Accept: application/json
+```
 
 #### Second:
 Hit any endpoint listed in the Stateless API Endpoints section with the headers below:
