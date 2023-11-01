@@ -59,6 +59,10 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 * Visit: patch http://localhost:9050/api/v1/products/{id} -> To update a product.
 * Visit: delete http://localhost:9050/api/v1/products/{id} -> To delete a product.
 
+### Auth Endpoints
+* Visit: get http://localhost:9050/api/v1/auth/login -> To login.
+* Visit: get http://localhost:9050/api/v1/auth/register -> To register.
+
 ## Principles, architecture, patterns and common processes used in this task
 * MVC (Model View Controller) architecture pattern.
 * Dockerization for development environment setup.
@@ -69,6 +73,7 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 * Replace Type Code with Subclasses.
 * Replace Magic Number with Symbolic Constant.
 * SOLID principles.
+* OCP (especially in the product price discount handler).
 * Design by contract.
 * DRY (Don't Repeat Yourself)
 * YAGNI (You Aren't Gonna Need It).
@@ -83,7 +88,7 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 
 ## You can run the command below for software metrics
 
-#### This will give you some insights in software metrics such as LCOM, Cyclomatic Complexity and more.
+#### This will give you some insights in software metrics and quality such as LCOM, Cyclomatic Complexity and more.
 ```bash
 docker-compose exec app php ./vendor/bin/phpmetrics --report-html=myreport <project-folder-to-analyze>
 ```
