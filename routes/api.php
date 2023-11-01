@@ -33,8 +33,6 @@ Route::prefix('v1')->group(function() {
             Route::patch('products/{id}', 'update');
             Route::delete('products/{id}', 'destroy');
         });
-    
-        Route::prefix('auth')->get('logout', [AuthController::class, 'logout']);
     });
 
     Route::prefix('auth')->controller(AuthController::class)->group(function () {
@@ -42,7 +40,3 @@ Route::prefix('v1')->group(function() {
         Route::post('register', 'register');
     });
 });
-
-// Route::get('test', function() {
-//     dd(ProductPriceDiscountManager::apply(10100, UserType::SILVER));
-// });

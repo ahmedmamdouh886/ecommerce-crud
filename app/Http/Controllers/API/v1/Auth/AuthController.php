@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\API\v1\Auth\LoginUserRequest;
 use App\Http\Requests\API\v1\StoreUserRequest;
 use App\Services\Auth\UserAuth;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,10 +32,10 @@ class AuthController extends Controller
     public function register(StoreUserRequest $request)
     {
         return response()->json([
-        'data' => [
+            'data' => [
+                'access_token' => $this->userAuthInstance->register($request->only('name', 'username', 'password')),
+            ],
             'message' => 'User created successfully!',
-            'access_token' => $this->userAuthInstance->register($request->only('name', 'username', 'password')),
-        ],
         ], Response::HTTP_CREATED);
     }
 
@@ -51,17 +50,15 @@ class AuthController extends Controller
     {
         if(! Auth::attempt($request->only('username', 'password'))) {
             return response()->json([
-                'data' => [
                     'message' => __('Unauthorized')
-                ]
             ], Response::HTTP_UNAUTHORIZED);
         }
 
         return response()->json([
             'data' => [
-                'message' => __('User created successfully!'),
                 'access_token' => $this->userAuthInstance->createTokenFor($request->input('username')),
             ],
+            'message' => __('User created successfully!'),
         ], Response::HTTP_CREATED);
     }
 }
