@@ -37,7 +37,7 @@ Accept: application/json
 Hit any endpoint listed in the Stateless API Endpoints sections with the headers below:
 
 Accept: application/json <br />
-Authorization: Bearer <b>your-token<b> --> Where your-token is the token you have got from the login process section.
+Authorization: Bearer <b>your-token</b> --> Where your-token is the token you have got from the login process section.
 
 ## Stateless API Endpoints
 
