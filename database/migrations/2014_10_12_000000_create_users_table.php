@@ -17,12 +17,10 @@ return new class extends Migration
             $table->string('name', 30);
             $table->string('username', 20)->unique();
             $table->string('avatar', 25)->default('avatar.png');
-            $table->enum('type', [
-                UserType::NORMAL->value, 
-                UserType::SILVER->value, 
-                UserType::GOLD->value
-            ]);
-            $table->boolean('is_active', true);
+            // Assuming that the business requirements state that the user type must be normal by default when created.
+            $table->enum('type', UserType::values());
+            // Assuming that the business requirements state that the user must be active by default when created.
+            $table->boolean('is_active')->default(true);
             $table->string('password', 100);
             $table->rememberToken();
             $table->timestamps();

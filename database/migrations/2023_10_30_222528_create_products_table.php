@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('description', 150);
             $table->string('image', 30)->default('product.png');
-            $table->double('price', 6, 3);
-            $table->string('slug', 100)->unique();
-            $table->boolean('is_active', true);
+            $table->unsignedDecimal('price', 8, 2);
+            $table->string('slug', 100)->unique(); // Unique index.
+            // Assuming that the business requirements state that a product must be active by default when created.
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

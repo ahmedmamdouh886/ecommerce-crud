@@ -23,4 +23,13 @@ enum UserType: string {
      * @var string.
      */
     case GOLD = "gold";
+
+    /**
+     * Get enum values.
+     * 
+     * @return array
+     */
+    public static function values() {
+        return array_column(self::cases(), 'value');
+    }
 }
