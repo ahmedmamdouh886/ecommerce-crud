@@ -95,7 +95,7 @@ docker-compose exec app php ./vendor/bin/phpmetrics --report-html=myreport <proj
 
 * app/Models/*.php --> It's an ORM layer to interact with database. Also It has some logic such as mutators/accessors, and I leverge the accessor feature to apply the product price discount on the fly, <b> considering the ORM is the only layer we use for interacting with DB. </b>
 
-* app/Repositories/*.php --> It's a layer for handling and isolating database queries. PLEASE note that it's Loosely Coupled, that's why I just return array from their methods (I could've used somthing like DTO layer but I haven't done that for the sake of time).
+* app/Repositories/*.php --> It's a layer for handling and isolating database queries. PLEASE note that it's Loosely Coupled, that's why I just return array from their methods (I could've used something like DTO layer but I haven't done that for the sake of time).
 
 * routes/api.php --> It contains the REST API endpoints.
 
