@@ -60,8 +60,8 @@ Authorization: Bearer <b>your-token</b> --> Where your-token is the token you ha
 * Visit: delete http://localhost:9050/api/v1/products/{id} -> To delete a product.
 
 ### Auth Endpoints
-* Visit: get http://localhost:9050/api/v1/auth/login -> To login.
-* Visit: get http://localhost:9050/api/v1/auth/register -> To register.
+* Visit: POST http://localhost:9050/api/v1/auth/login -> To login.
+* Visit: POST http://localhost:9050/api/v1/auth/register -> To register.
 
 ## Principles, architecture, patterns and common processes used in this task
 * MVC (Model View Controller) architecture pattern.
