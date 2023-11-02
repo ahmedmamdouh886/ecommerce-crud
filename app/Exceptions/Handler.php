@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Http\Response;
+use Illuminate\Auth\AuthenticationException;
 
 class Handler extends ExceptionHandler
 {
@@ -41,6 +42,8 @@ class Handler extends ExceptionHandler
         if ($request->wantsJson()) {
             if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
                 return response()->json(['message' => __('Resource not found')], Response::HTTP_NOT_FOUND);
+            } elseif ($exception instanceof AuthenticationException) {
+                return response()->json(['message' => __('Unauthorized!')], Response::HTTP_UNAUTHORIZED);
             } elseif ($exception instanceof Exception) {
                 return response()->json(['message' => __('Internal server error')], Response::HTTP_INTERNAL_SERVER_ERROR);
             }
